@@ -27,6 +27,8 @@
               "src/assets"
             ],
             "styles": [
+              "../article-app/node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "../article-app/node_modules/font-awesome/css/font-awesome.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -94,6 +96,8 @@
               "src/assets"
             ],
             "styles": [
+              "../article-app/node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "../article-app/node_modules/font-awesome/css/font-awesome.min.css",
               "src/styles.css"
             ],
             "scripts": []

@@ -1,0 +1,32 @@
+<main role="main" class="container bootdey.com">
+  <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-blue rounded box-shadow">
+    <div class="lh-100" style="color:black">
+      <h4 class="mb-0 text-white lh-100">{{article.text}}</h4>
+      <small>{{article.descr}}</small>
+    </div>
+  </div>
+
+  <form>
+    <div class="form-group">
+        <label>Your Comment</label>
+        <textarea class="form-control mt-2" rows="5"  required minlength="10" [(ngModel)]="commentary" [ngModelOptions]="{standalone:true}"></textarea>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary btn-sm mt-3" type="button" (click)="addCommentary()"> Submit Comment </button>
+    </div>
+</form>
+
+  <div class="my-3 p-3 bg-white rounded box-shadow" *ngFor = "let comment of myComments">
+    <h6 class="border-bottom border-gray pb-2 mb-0">Comments</h6>
+    <div class="media text-muted pt-3">
+      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+        <strong class="d-block text-gray-dark">@
+          {{comment.userName}}
+        </strong>
+           {{comment.text}}
+      </p>
+    </div>
+    <button class="btn btn-danger mt-3" [disabled]="comment.delete" (click)="deleteComment(comment.id)">Remove</button>
+  </div>
+
+</main>

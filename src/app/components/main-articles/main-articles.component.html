@@ -1,0 +1,27 @@
+
+<form class = "mt-3">
+  <div class="form-group mt-3">
+    <label for="exampleInputEmail1">Theme</label>
+    <input type="text" class="form-control mt-1" id="exampleInputEmail1" placeholder="Login" [(ngModel)]="myText"[ngModelOptions]="{standalone:true}" >
+  </div>
+  <div class="form-group mt-3">
+    <label for="exampleInputPassword1" class ="textarea">Text</label>
+    <textarea type="text" class="form-control mt-1" id="exampleInputPassword1" rows="5"  placeholder="Aboute article"  [(ngModel)]="myDescr" [ngModelOptions]="{standalone:true}"></textarea>
+  </div>
+  <button class="btn btn-success mt-2" (click)="createArticle($event)">Create Article</button>
+</form>
+
+
+<div class="my-3 p-3 bg-white rounded box-shadow" *ngFor = "let article of articles">
+  <h4 class="border-bottom border-gray pb-2 mb-0">{{article.text}}</h4>
+  <div class="media text-muted pt-3">
+    <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <strong class="d-block text-gray-dark">@{{article.userName}}</strong>
+     {{article.descr}}
+    </p>
+  </div>
+ <div class="d-flex justify-content-end">
+    <button class="btn btn-primary mt-3" (click)="openComments(article)">Comments</button>
+ </div>
+</div>
+
