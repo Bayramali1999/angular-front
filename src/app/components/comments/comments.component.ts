@@ -20,14 +20,7 @@ export class CommentsComponent implements OnInit {
   }
 
   public loadAllComments(): void {
-    let comList:Comment[] = [{
-      "id":1,
-      "text":"",
-      "userName":"",
-      "userCode":"",
-      "articleCode":"",
-      "delete": true
-    }];
+    let comList:Comment[] = [];
     this.commentsService.getAllComments().subscribe(
       (response:Comment[])=>{
         this.commentary ="";
